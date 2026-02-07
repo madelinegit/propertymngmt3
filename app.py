@@ -31,6 +31,7 @@ if uploaded:
     # Auto-detect columns (simple)
     name_col = "Property Name" if "Property Name" in df.columns else st.selectbox("Property name column", df.columns)
     dist_col = "Distance" if "Distance" in df.columns else st.selectbox("Distance column", df.columns)
+    neigh_col = "Neighborhood" if "Neighborhood" in df.columns else st.selectbox("Neighborhood column", df.columns)
 
     df[dist_col] = pd.to_numeric(df[dist_col], errors="coerce")
 
@@ -63,5 +64,6 @@ if uploaded:
             st.subheader("Sorted Results")
 
             for i, row in result.iterrows():
-                st.write(f"**{i+1}. {row[name_col]}** — {row[dist_col]} miles")
+                st.write(f"**{i+1}. {row[name_col]}** — {row[dist_col]} miles , {row[neigh_col]})"
+
 
