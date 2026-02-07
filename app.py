@@ -62,8 +62,11 @@ if uploaded:
             )
 
             st.subheader("Sorted Results")
+            
+            table = result[[name_col, dist_col, neigh_col]].copy()
+            table.columns = ["Property", "Miles", "Neighborhood"]
+            
+            st.dataframe(table, use_container_width=True, hide_index=True)
 
-            for i, row in result.iterrows():
-                st.write(f"**{i+1}. {row[name_col]}** — {row[dist_col]} miles , {row[neigh_col]}")
 
 
