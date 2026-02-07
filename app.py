@@ -4,6 +4,14 @@ import pandas as pd
 st.set_page_config(page_title="Property Distance Sorter", layout="wide")
 st.title("Property Distance Sorter")
 
+
+# Notes box
+notes = st.text_area(
+    "Notes",
+    placeholder="Jot down routing ideas, priorities, or reminders…",
+    height=120
+)
+
 uploaded = st.file_uploader(
     "Upload your property distance file",
     type=["csv", "xlsx"]
@@ -42,7 +50,7 @@ if uploaded:
 
     ascending = order == "Closest → Farthest"
 
-    if st.button("Sort & Analyze"):
+    if st.button("Sort"):
         if not selected:
             st.warning("Please select at least one property.")
         else:
