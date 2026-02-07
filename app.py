@@ -64,6 +64,6 @@ if uploaded:
             st.subheader("Sorted Results")
 
             for i, row in result.iterrows():
-                st.write(f"**{i+1}. {row[name_col]}** — {row[dist_col]} miles , {row[neigh_col]})"
+                st.write(f"**{i+1}. {row[name_col]}** — {row[dist_col]} miles , {row[neigh_col]}"
 
 
